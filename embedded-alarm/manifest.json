@@ -1,0 +1,11 @@
+{
+	"id": "embedded-alarm",
+	"name": "Emebedded Alarm",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "an simple alarm that ringing when task is on due or scheduled",
+	"author": "ME",
+	"authorUrl": "https://obsidian.md",
+	"fundingUrl": "https://obsidian.md/pricing",
+	"isDesktopOnly": false
+}

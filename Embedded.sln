@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{803FD0C6-D64E-4E16-9DC3-1DAEC859A3D2}") = "EmbeddedAlarm", "EmbeddedAlarm\EmbeddedAlarm.vgdbproj", "{65D0F1EA-E19F-423F-A951-F5E658B31428}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "embedded-alarm", "embedded-alarm\embedded-alarm.esproj", "{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|VisualGDB = Debug|VisualGDB
+		Release|Any CPU = Release|Any CPU
+		Release|VisualGDB = Release|VisualGDB
+		Tests (Debug)|Any CPU = Tests (Debug)|Any CPU
+		Tests (Debug)|VisualGDB = Tests (Debug)|VisualGDB
+		Tests (Release)|Any CPU = Tests (Release)|Any CPU
+		Tests (Release)|VisualGDB = Tests (Release)|VisualGDB
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65D0F1EA-E19F-423F-A951-F5E658B31428}.Debug|Any CPU.ActiveCfg = Debug|VisualGDB
+		{65D0F1EA-E19F-423F-A951-F5E658B31428}.Debug|Any CPU.Build.0 = Debug|VisualGDB
+		{65D0F1EA-E19F-423F-A951-F5E658B31428}.Debug|VisualGDB.ActiveCfg = Debug|VisualGDB
+		{65D0F1EA-E19F-423F-A951-F5E658B31428}.Debug|VisualGDB.Build.0 = Debug|VisualGDB
+		{65D0F1EA-E19F-423F-A951-F5E658B31428}.Release|Any CPU.ActiveCfg = Release|VisualGDB
+		{65D0F1EA-E19F-423F-A951-F5E658B31428}.Release|Any CPU.Build.0 = Release|VisualGDB
+		{65D0F1EA-E19F-423F-A951-F5E658B31428}.Release|VisualGDB.ActiveCfg = Release|VisualGDB
+		{65D0F1EA-E19F-423F-A951-F5E658B31428}.Release|VisualGDB.Build.0 = Release|VisualGDB
+		{65D0F1EA-E19F-423F-A951-F5E658B31428}.Tests (Debug)|Any CPU.ActiveCfg = Tests (Debug)|VisualGDB
+		{65D0F1EA-E19F-423F-A951-F5E658B31428}.Tests (Debug)|Any CPU.Build.0 = Tests (Debug)|VisualGDB
+		{65D0F1EA-E19F-423F-A951-F5E658B31428}.Tests (Debug)|VisualGDB.ActiveCfg = Tests (Debug)|VisualGDB
+		{65D0F1EA-E19F-423F-A951-F5E658B31428}.Tests (Debug)|VisualGDB.Build.0 = Tests (Debug)|VisualGDB
+		{65D0F1EA-E19F-423F-A951-F5E658B31428}.Tests (Release)|Any CPU.ActiveCfg = Tests (Release)|VisualGDB
+		{65D0F1EA-E19F-423F-A951-F5E658B31428}.Tests (Release)|Any CPU.Build.0 = Tests (Release)|VisualGDB
+		{65D0F1EA-E19F-423F-A951-F5E658B31428}.Tests (Release)|VisualGDB.ActiveCfg = Tests (Release)|VisualGDB
+		{65D0F1EA-E19F-423F-A951-F5E658B31428}.Tests (Release)|VisualGDB.Build.0 = Tests (Release)|VisualGDB
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Debug|VisualGDB.ActiveCfg = Debug|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Debug|VisualGDB.Build.0 = Debug|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Debug|VisualGDB.Deploy.0 = Debug|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Release|VisualGDB.ActiveCfg = Release|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Release|VisualGDB.Build.0 = Release|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Release|VisualGDB.Deploy.0 = Release|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Tests (Debug)|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Tests (Debug)|Any CPU.Build.0 = Debug|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Tests (Debug)|Any CPU.Deploy.0 = Debug|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Tests (Debug)|VisualGDB.ActiveCfg = Debug|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Tests (Debug)|VisualGDB.Build.0 = Debug|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Tests (Debug)|VisualGDB.Deploy.0 = Debug|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Tests (Release)|Any CPU.ActiveCfg = Release|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Tests (Release)|Any CPU.Build.0 = Release|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Tests (Release)|Any CPU.Deploy.0 = Release|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Tests (Release)|VisualGDB.ActiveCfg = Release|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Tests (Release)|VisualGDB.Build.0 = Release|Any CPU
+		{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}.Tests (Release)|VisualGDB.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E847628-355E-40F0-9765-7E5C46E2CA5F}
+	EndGlobalSection
+EndGlobal
