@@ -18,3 +18,4 @@ assuming you have intialize ESP-IDF on your terminal and on this directory
 
 ## Note
 - make sure you set flash size to 4MB on `idf.py menuconfig` on `Serial flasher config` menu if there is an error. or you can reduce the size of storage on [partition table](https://github.com/Berigoo/Embedded-Alarm/blob/master/EmbeddedAlarm/partitions.csv).
+- make sure you have enough power supply for the ESP32 board, buzzer, and LCD 1602.
