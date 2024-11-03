@@ -169,7 +169,7 @@ static void updateTime(void* params){
     text_t* curr = textLists;
     text_t* penultimate = curr;
     while(curr){
-      if(curr->scheduled){
+      if(curr->scheduled && *curr->scheduled != 0){
         struct tm* scheduledTimeinfo = localtime(curr->scheduled);
         char scheduledBuf[64];
         strftime(scheduledBuf, sizeof(scheduledBuf), "%m/%d %H:%M", scheduledTimeinfo);
@@ -180,7 +180,7 @@ static void updateTime(void* params){
           break;
         }
       }
-      if(curr->due){
+      if(curr->due && *curr->due != 0){
         struct tm* dueTimeinfo = localtime(curr->due);
         char dueBuf[64];
         strftime(dueBuf, sizeof(dueBuf), "%m/%d %H:%M", dueTimeinfo);
@@ -188,7 +188,6 @@ static void updateTime(void* params){
         if(strcmp(strftime_buf, dueBuf) == 0){
           currentRinging = curr;
           penultimateRinging = penultimate;
-          /*xEventGroupSetBits(alarmEvents, EVENT_ALARM_DUE);*/
           xEventGroupSetBits(alarmEvents, EVENT_ALARM_DUE | EVENT_ALARM_DEL);
           break;
         }
