@@ -385,6 +385,18 @@ CONFIG_PARTITION_TABLE_MD5=y
 # end of Partition Table
 
 #
+# User configurations
+#
+CONFIG_SDA_PIN=21
+CONFIG_SCL_PIN=22
+CONFIG_BUZZER_PIN=16
+CONFIG_TIMEZONE="UTC-7"
+CONFIG_NTP_SERVER="pool.ntp.org"
+CONFIG_WIFI_SSID="Rizki"
+CONFIG_WIFI_PASS="ajrt6330"
+# end of User configurations
+
+#
 # Compiler options
 #
 CONFIG_COMPILER_OPTIMIZATION_DEBUG=y

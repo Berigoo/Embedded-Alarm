@@ -7,6 +7,11 @@ Project("{803FD0C6-D64E-4E16-9DC3-1DAEC859A3D2}") = "EmbeddedAlarm", "EmbeddedAl
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "embedded-alarm", "embedded-alarm\embedded-alarm.esproj", "{BBD37CA5-DB0E-4BC0-9DD9-98897B2AE7CD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9EA4BEEC-8B1F-4C03-93D9-06A700745013}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

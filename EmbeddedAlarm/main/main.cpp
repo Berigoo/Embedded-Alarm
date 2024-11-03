@@ -27,7 +27,6 @@
 #include "storage.h"
 
 //TODO create task counter on bottom-right
-#define BUZZER_PIN GPIO_NUM_16
 
 static TaskHandle_t task1Handle = nullptr;
 static TaskHandle_t task2Handle = nullptr;
@@ -71,15 +70,13 @@ static void buzzerOn(gpio_num_t pin, uint32_t duration, uint32_t highLen, uint32
 static void alarmHandle(void* pvParams);
 static EventGroupHandle_t alarmEvents = xEventGroupCreate();
 
-#define TIMEZONE "UTC-7"
-
 extern "C" void app_main(void)
 {
-  setenv("TZ", TIMEZONE, 1);
+  setenv("TZ", CONFIG_TIMEZONE, 1);
   tzset();
 
   ESP_LOGW("CHECK", "Time_t %zu", sizeof(time_t));
-  gpio_set_direction(BUZZER_PIN, gpio_mode_t::GPIO_MODE_OUTPUT);
+  gpio_set_direction((gpio_num_t)CONFIG_BUZZER_PIN, gpio_mode_t::GPIO_MODE_OUTPUT);
 
   createMasterBus();
   constructDevHandle(0x27, &lcd1);
@@ -93,7 +90,7 @@ extern "C" void app_main(void)
   ESP_ERROR_CHECK(esp_event_loop_create_default());
   storageInit();
   textLists = load();
-  initWifi("Rizki", "ajrt6330");
+  initWifi(CONFIG_WIFI_SSID, CONFIG_WIFI_PASS);
   esp_event_handler_register(WIFI_EVENT, ESP_EVENT_ANY_ID, wifi_event_handler, NULL);
 
   xTaskCreate(updateTime, "update_time", 4096, nullptr, 10, &task1Handle);
@@ -128,7 +125,7 @@ extern "C" void app_main(void)
 static void obtainTime(){
   ESP_LOGI("TIME", "Initialize SNTP");
   sntp_setoperatingmode(SNTP_OPMODE_POLL);
-  sntp_setservername(0, "pool.ntp.org");
+  sntp_setservername(0, CONFIG_NTP_SERVER);
   /*sntp_set_time_sync_notification_cb()*/
   sntp_init();
   while(sntp_get_sync_status() == SNTP_SYNC_STATUS_RESET){
@@ -506,12 +503,12 @@ static void rollingText(void* pvParams){
   }
 }
 
-static void buzzerOn(gpio_num_t pin, uint32_t duration, uint32_t highLen, uint32_t lowLen){
+static void buzzerOn(int pin, uint32_t duration, uint32_t highLen, uint32_t lowLen){
   uint32_t count = duration / highLen;
   for (uint32_t i = 0; i < count; i++) {
-    gpio_set_level(pin, 1);
+    gpio_set_level((gpio_num_t)pin, 1);
     vTaskDelay(highLen / portTICK_PERIOD_MS);
-    gpio_set_level(pin, 0);
+    gpio_set_level((gpio_num_t)pin, 0);
     vTaskDelay(lowLen / portTICK_PERIOD_MS);
   }
 }
@@ -529,7 +526,7 @@ static void alarmHandle(void* pvParams){
 
     if(bits & EVENT_ALARM_DUE){
       ESP_LOGI("ALARM", "Task in due");
-      buzzerOn(BUZZER_PIN, 10000, 500, 200);
+      buzzerOn(CONFIG_BUZZER_PIN, 10000, 500, 200);
 
       if(bits & (EVENT_ALARM_DUE | EVENT_ALARM_DEL)){
         if(currentRinging->pNext){
@@ -547,7 +544,7 @@ static void alarmHandle(void* pvParams){
 
     }else if(bits & EVENT_ALARM_SCHEDULED){
       ESP_LOGI("ALARM", "Task in schedule");
-      buzzerOn(BUZZER_PIN, 10000, 1000, 500);
+      buzzerOn(CONFIG_BUZZER_PIN, 10000, 1000, 500);
     }
 
     rolledTexts = textLists;

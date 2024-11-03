@@ -1,0 +1,23 @@
+menu "User configurations"
+config SDA_PIN
+	int "SDA pin"
+	default 21
+config SCL_PIN
+	int "SCL pin"
+	default 22
+config BUZZER_PIN
+	int "Buzzer pin"
+	default 16
+config TIMEZONE
+	string "Timezone"
+	default "UTC-7"
+config NTP_SERVER
+	string "NTP server"
+	default "pool.ntp.org"
+config WIFI_SSID
+	string "WiFi SSID"
+	default "mywifi"
+config WIFI_PASS
+	string "WiFi password"
+	default "mypassword"
+endmenu
