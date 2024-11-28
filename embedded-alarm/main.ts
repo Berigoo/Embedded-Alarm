@@ -1,6 +1,6 @@
-import { App, Plugin, PluginManifest, Editor, MarkdownView, PluginSettingTab } from 'obsidian';
+import { App, Plugin, Setting, MarkdownView, PluginSettingTab, EditorPosition } from 'obsidian';
 import * as net from "net";
-import "moment";
+import * as moment from "moment";
 import * as crypto from "crypto"
 
 //TODO make it less chaotic
@@ -237,7 +237,7 @@ export default class TaskAlarmPlugin extends Plugin {
 		let isRet = false;
 		return new Promise<String>((resolve, reject)=>{
 			const activeView = this.app.workspace.getActiveViewOfType(MarkdownView);
-			if(!activeView) reject("not a markdown");
+			if(!activeView) return reject("not a markdown");
 			const editor = activeView?.editor;
 			const currentLine = activeView.editor.getCursor().line;
 			let cursor: EditorPosition = {
